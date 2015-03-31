@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # require './app/controllers/restaurants_controller.rb'
   require_relative '../app/controllers/restaurants_controller.rb'
   # The priority is based upon order of creation: first created -> highest priority.
