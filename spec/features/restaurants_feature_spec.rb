@@ -24,12 +24,24 @@ feature 'restaurants' do
   context 'creating restaurants' do
     scenario 'prompts user to fill out a form, then displays the new restaurant' do
       visit '/restaurants'
+      click_link 'Sign up'
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'test@example.com')
+      fill_in('Password confirmation', with: 'test@example.com')
+      click_button 'Sign up'
       click_link 'Add a restaurant'
       fill_in 'Name', with: 'KFC'
       click_button 'Create Restaurant'
       expect(page).to have_content('KFC')
       expect(current_path).to eq '/restaurants'
     end
+
+    scenario 'a user cannot create a reataurant if not signed in' do
+      visit '/restaurants'
+      click_link 'Add a restaurant'
+      expect(page).to have_content 'Log in'
+    end
+
   end
 
   context 'viewing restaurants' do
