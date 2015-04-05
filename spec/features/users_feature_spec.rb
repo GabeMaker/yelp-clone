@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'features/feature_helpers'
 
 context "user not signed in and on the homepage" do
   it "should see a 'sign in' link and a 'sign up' link" do
@@ -33,5 +34,10 @@ context "user signed in on the homepage" do
     visit('/')
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
+  end
+end
+
+context "editing and deleting restaurants" do
+  it "can't edit or delete restaurants user didn't create" do
   end
 end

@@ -1,12 +1,5 @@
 require 'rails_helper'
-
-def sign_up
-  click_link 'Sign up'
-  fill_in('Email', with: 'test@example.com')
-  fill_in('Password', with: 'test@example.com')
-  fill_in('Password confirmation', with: 'test@example.com')
-  click_button 'Sign up'
-end
+require 'features/feature_helpers'
 
 feature 'restaurants' do
   context 'no restaurants have been added' do
