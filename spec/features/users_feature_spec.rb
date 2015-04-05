@@ -39,5 +39,13 @@ end
 
 context "editing and deleting restaurants" do
   it "can't edit or delete restaurants user didn't create" do
+    visit('/')
+    sign_up
+    create("Mario's Pizza")
+    review("Mario's Pizza")
+    click_link('Sign out')
+    sign_up('second_user@example.com')
+
+
   end
 end
