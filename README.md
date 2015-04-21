@@ -19,8 +19,6 @@ Making a version of [Yelp](http://www.yelp.co.uk/) as an introduction to Ruby on
 - Capybara, Rspec
 - HTML
 - PostgreSQL
-- 
-...
 
 ### How to run it
 
